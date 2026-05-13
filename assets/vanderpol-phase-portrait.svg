@@ -32,6 +32,9 @@
 <text x="930.0" y="422.0" class="small" text-anchor="start">The arrows show the local flow.</text>
 <text x="930.0" y="446.0" class="small" text-anchor="start">The colored curves show where one derivative vanishes.</text>
 <text x="930.0" y="470.0" class="small" text-anchor="start">Trajectories reveal whether the fixed point attracts, spirals, or closes into an orbit.</text>
+<text x="930.0" y="528.0" class="label" text-anchor="start">Local fixed-point readout</text>
+<text x="930.0" y="558.0" class="small" text-anchor="start">1. (0.00, 0.00) → unstable spiral</text>
+<text x="950.0" y="580.0" class="tiny" text-anchor="start">λ = 0.75+0.66i, 0.75-0.66i</text>
 <line x1="110.0" y1="170.0" x2="110.0" y2="760.0" stroke="#223445" stroke-width="1" opacity="1.0"/>
 <text x="110.0" y="788.0" class="tiny" text-anchor="middle">-3.0</text>
 <line x1="260.0" y1="170.0" x2="260.0" y2="760.0" stroke="#223445" stroke-width="1" opacity="1.0"/>

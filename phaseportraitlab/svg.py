@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from .analysis import trajectories, vector_field
+from .analysis import analyze_fixed_points, trajectories, vector_field
 from .systems import PlanarSystem, State
 
 
@@ -46,6 +46,7 @@ def polyline(points: list[State], x_range: tuple[float, float], y_range: tuple[f
 def render_system(system: PlanarSystem, path: Path) -> None:
     field = vector_field(system)
     curves = trajectories(system)
+    fixed_point_info = analyze_fixed_points(system)
     dx_segments = system.nullclines_dx(system.x_range)
     dy_segments = system.nullclines_dy(system.x_range)
 
@@ -84,7 +85,26 @@ def render_system(system: PlanarSystem, path: Path) -> None:
         text(930, 422, 'The arrows show the local flow.', 'small'),
         text(930, 446, 'The colored curves show where one derivative vanishes.', 'small'),
         text(930, 470, 'Trajectories reveal whether the fixed point attracts, spirals, or closes into an orbit.', 'small'),
+        text(930, 528, 'Local fixed-point readout', 'label'),
     ]
+
+    y_text = 558.0
+    for index, item in enumerate(fixed_point_info, start=1):
+        x, y = item.point
+        eig0, eig1 = item.eigenvalues
+        def _fmt(value: complex) -> str:
+            if abs(value.imag) < 1e-9:
+                return f'{value.real:.2f}'
+            sign = '+' if value.imag >= 0 else '-'
+            return f'{value.real:.2f}{sign}{abs(value.imag):.2f}i'
+
+        svg.extend(
+            [
+                text(930, y_text, f'{index}. ({x:.2f}, {y:.2f}) → {item.classification}', 'small'),
+                text(950, y_text + 22, f'λ = {_fmt(eig0)}, {_fmt(eig1)}', 'tiny'),
+            ]
+        )
+        y_text += 54
 
     x0, x1 = system.x_range
     y0, y1 = system.y_range

@@ -18,5 +18,8 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Mathematics"
 ]
 
+[project.scripts]
+phase-portrait-report = "phaseportraitlab.cli:main"
+
 [tool.setuptools.packages.find]
 include = ["phaseportraitlab*"]

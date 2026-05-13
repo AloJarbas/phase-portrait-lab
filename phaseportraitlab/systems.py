@@ -135,7 +135,33 @@ def brusselator() -> PlanarSystem:
     )
 
 
-CATALOG: tuple[PlanarSystem, ...] = (vandepol(), lotka_volterra(), brusselator())
+def linear_saddle() -> PlanarSystem:
+    def derivatives(x: float, y: float) -> State:
+        return (x, -y)
+
+    def dx_nullclines(x_range: tuple[float, float]) -> list[list[State]]:
+        _x0, _x1 = x_range
+        return [[(0.0, -2.4), (0.0, 2.4)]]
+
+    def dy_nullclines(x_range: tuple[float, float]) -> list[list[State]]:
+        x0, x1 = x_range
+        return [[(x0, 0.0), (x1, 0.0)]]
+
+    return PlanarSystem(
+        slug="linear-saddle",
+        title="Linear saddle",
+        description="The cleanest local-stability example in the repo: one axis attracts, the other repels.",
+        x_range=(-2.4, 2.4),
+        y_range=(-2.4, 2.4),
+        derivatives=derivatives,
+        fixed_points=((0.0, 0.0),),
+        trajectories=((-1.9, 1.4), (-1.6, 0.4), (0.4, 1.8), (1.5, -1.2), (0.0, 1.8), (1.8, 0.0)),
+        nullclines_dx=dx_nullclines,
+        nullclines_dy=dy_nullclines,
+    )
+
+
+CATALOG: tuple[PlanarSystem, ...] = (linear_saddle(), vandepol(), lotka_volterra(), brusselator())
 
 
 def get_system(slug: str) -> PlanarSystem:
