@@ -164,10 +164,10 @@ def render_brusselator_parameter_atlas(
     amp_cap = _quantile(amp_values, 0.95) if amp_values else 0.0
     period_cap = _quantile(period_values, 0.95) if period_values else 0.0
 
-    width = 1420
+    width = 1580
     height = 1620
     left = 106.0
-    right = 216.0
+    right = 360.0
     panel_width = width - left - right
     top = 126.0
     panel_height = 356.0
@@ -314,7 +314,7 @@ def render_brusselator_parameter_atlas(
     ]
     callout_x = legend_x - 16.0
     callout_y = height - 292.0
-    callout_w = right + 118.0
+    callout_w = width - callout_x - 34.0
     lines.append(f'<rect x="{callout_x:.2f}" y="{callout_y:.2f}" width="{callout_w:.2f}" height="204" rx="18" fill="#0b1722" stroke="#5e7fa3" stroke-width="1.6"/>')
     lines.append(f'<text x="{callout_x + 18:.2f}" y="{callout_y + 28:.2f}" fill="#dce7f3" font-size="18" font-family="Helvetica, Arial, sans-serif" font-weight="700">Anchor readings</text>')
     for index, cell in enumerate(samples):
@@ -441,10 +441,12 @@ def _append_gradient_legend(
 ) -> None:
     safe_caption = "".join(character.lower() if character.isalnum() else "-" for character in caption).strip("-") or "legend"
     gradient_id = f"legend-{safe_caption}-{int(round(x))}-{int(round(y))}"
+    lines.append('<defs>')
     lines.append(f'<linearGradient id="{gradient_id}" x1="0" y1="1" x2="0" y2="0">')
     for offset, color in stops:
         lines.append(f'  <stop offset="{offset * 100:.1f}%" stop-color="{color}"/>')
     lines.append('</linearGradient>')
+    lines.append('</defs>')
     lines.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{width:.2f}" height="{height:.2f}" rx="12" fill="url(#{gradient_id})" stroke="#5e7fa3" stroke-width="1.5"/>')
     lines.append(f'<text x="{x:.2f}" y="{y - 14:.2f}" fill="#dce7f3" font-size="14" font-family="Helvetica, Arial, sans-serif">{_escape(caption)}</text>')
     for label, fraction in tick_labels:

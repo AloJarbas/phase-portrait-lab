@@ -1,17 +1,22 @@
 from __future__ import annotations
 
+import textwrap
 from pathlib import Path
 
 from .analysis import analyze_fixed_points, trajectories, vector_field
 from .systems import PlanarSystem, State
 
 
-WIDTH = 1280
-HEIGHT = 860
-PLOT_LEFT = 110.0
+WIDTH = 1440
+HEIGHT = 920
+PLOT_LEFT = 118.0
 PLOT_RIGHT = 860.0
-PLOT_TOP = 170.0
-PLOT_BOTTOM = 760.0
+PLOT_TOP = 186.0
+PLOT_BOTTOM = 788.0
+SIDE_LEFT = 900.0
+SIDE_TOP = 150.0
+SIDE_WIDTH = 480.0
+SIDE_BOTTOM = 828.0
 
 
 def map_x(x: float, x_range: tuple[float, float]) -> float:
@@ -24,6 +29,13 @@ def map_y(y: float, y_range: tuple[float, float]) -> float:
 
 def text(x: float, y: float, value: str, cls: str, anchor: str = "start") -> str:
     return f'<text x="{x:.1f}" y="{y:.1f}" class="{cls}" text-anchor="{anchor}">{value}</text>'
+
+
+def paragraph(x: float, y: float, value: str, cls: str, *, width_chars: int = 44, line_height: float = 22.0) -> str:
+    lines = textwrap.wrap(value, width=width_chars) or [value]
+    tspans = [f'<tspan x="{x:.1f}" dy="0">{lines[0]}</tspan>']
+    tspans.extend(f'<tspan x="{x:.1f}" dy="{line_height:.1f}">{line}</tspan>' for line in lines[1:])
+    return f'<text x="{x:.1f}" y="{y:.1f}" class="{cls}">{"".join(tspans)}</text>'
 
 
 def line(x1: float, y1: float, x2: float, y2: float, stroke: str, width: float = 2.0, dash: str | None = None, opacity: float = 1.0) -> str:
@@ -69,26 +81,27 @@ def render_system(system: PlanarSystem, path: Path) -> None:
         '  </style>',
         '</defs>',
         f'<rect width="{WIDTH}" height="{HEIGHT}" fill="url(#bg)"/>',
-        '<rect x="60" y="120" width="1160" height="690" rx="18" class="panel"/>',
+        '<rect x="70" y="136" width="1310" height="712" rx="18" class="panel"/>',
+        f'<rect x="{SIDE_LEFT:.0f}" y="{SIDE_TOP:.0f}" width="{SIDE_WIDTH:.0f}" height="{SIDE_BOTTOM - SIDE_TOP:.0f}" rx="18" fill="#0f1b28" stroke="#5e7fa3" stroke-width="1.6"/>',
         text(90, 68, system.title, 'title'),
-        text(90, 98, system.description, 'subtitle'),
-        text(930, 185, 'Legend', 'label'),
-        text(968, 232, 'trajectories', 'small'),
-        text(968, 268, 'dx/dt = 0', 'small'),
-        text(968, 304, 'dy/dt = 0', 'small'),
-        text(968, 340, 'fixed points', 'small'),
-        circle(940, 224, 8, '#4ade80'),
-        line(924, 260, 956, 260, '#f97316', 4),
-        line(924, 296, 956, 296, '#60a5fa', 4),
-        circle(940, 336, 7, '#f8fafc'),
-        text(930, 392, 'How to read it', 'label'),
-        text(930, 422, 'The arrows show the local flow.', 'small'),
-        text(930, 446, 'The colored curves show where one derivative vanishes.', 'small'),
-        text(930, 470, 'Trajectories reveal whether the fixed point attracts, spirals, or closes into an orbit.', 'small'),
-        text(930, 528, 'Local fixed-point readout', 'label'),
+        paragraph(90, 98, system.description, 'subtitle', width_chars=100),
+        text(SIDE_LEFT + 28, 188, 'Legend', 'label'),
+        text(SIDE_LEFT + 66, 234, 'trajectories', 'small'),
+        text(SIDE_LEFT + 66, 270, 'dx/dt = 0', 'small'),
+        text(SIDE_LEFT + 66, 306, 'dy/dt = 0', 'small'),
+        text(SIDE_LEFT + 66, 342, 'fixed points', 'small'),
+        circle(SIDE_LEFT + 38, 226, 8, '#4ade80'),
+        line(SIDE_LEFT + 22, 262, SIDE_LEFT + 54, 262, '#f97316', 4),
+        line(SIDE_LEFT + 22, 298, SIDE_LEFT + 54, 298, '#60a5fa', 4),
+        circle(SIDE_LEFT + 38, 334, 7, '#f8fafc'),
+        text(SIDE_LEFT + 28, 392, 'How to read it', 'label'),
+        paragraph(SIDE_LEFT + 28, 422, 'The arrows show the local flow.', 'small', width_chars=46),
+        paragraph(SIDE_LEFT + 28, 468, 'The colored curves show where one derivative vanishes.', 'small', width_chars=46),
+        paragraph(SIDE_LEFT + 28, 530, 'Trajectories reveal whether the fixed point attracts, spirals, or closes into an orbit.', 'small', width_chars=46),
+        text(SIDE_LEFT + 28, 620, 'Local fixed-point readout', 'label'),
     ]
 
-    y_text = 558.0
+    y_text = 650.0
     for index, item in enumerate(fixed_point_info, start=1):
         x, y = item.point
         eig0, eig1 = item.eigenvalues
@@ -100,11 +113,11 @@ def render_system(system: PlanarSystem, path: Path) -> None:
 
         svg.extend(
             [
-                text(930, y_text, f'{index}. ({x:.2f}, {y:.2f}) → {item.classification}', 'small'),
-                text(950, y_text + 22, f'λ = {_fmt(eig0)}, {_fmt(eig1)}', 'tiny'),
+                paragraph(SIDE_LEFT + 28, y_text, f'{index}. ({x:.2f}, {y:.2f}) → {item.classification}', 'small', width_chars=44),
+                paragraph(SIDE_LEFT + 46, y_text + 20, f'λ = {_fmt(eig0)}, {_fmt(eig1)}', 'tiny', width_chars=44, line_height=18.0),
             ]
         )
-        y_text += 54
+        y_text += 72
 
     x0, x1 = system.x_range
     y0, y1 = system.y_range
@@ -141,7 +154,7 @@ def render_system(system: PlanarSystem, path: Path) -> None:
     for x, y in system.fixed_points:
         svg.append(circle(map_x(x, system.x_range), map_y(y, system.y_range), 6.0, '#f8fafc'))
 
-    svg.append(text(PLOT_LEFT, 788, 'Generated from a standard-library Python gallery: vector field + nullclines + trajectories.', 'small'))
+    svg.append(text(PLOT_LEFT, 842, 'Generated from a standard-library Python gallery: vector field + nullclines + trajectories.', 'small'))
     svg.append('</svg>')
 
     path.write_text('\n'.join(svg) + '\n')

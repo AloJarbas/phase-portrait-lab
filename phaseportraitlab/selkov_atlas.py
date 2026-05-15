@@ -184,10 +184,10 @@ def render_selkov_parameter_atlas(
     amp_cap = _quantile(amp_values, 0.95) if amp_values else 0.0
     period_cap = _quantile(period_values, 0.95) if period_values else 0.0
 
-    width = 1420
+    width = 1580
     height = 1620
     left = 106.0
-    right = 216.0
+    right = 360.0
     panel_width = width - left - right
     top = 126.0
     panel_height = 356.0
@@ -358,9 +358,9 @@ def render_selkov_parameter_atlas(
         _nearest_cell(cells, 0.08, 0.60),
         _nearest_cell(cells, 0.08, 0.95),
     ]
-    callout_x = width - 266.0
+    callout_x = legend_x - 16.0
     callout_y = height - 332.0
-    callout_w = 226.0
+    callout_w = width - callout_x - 34.0
     lines.append(f'<rect x="{callout_x:.2f}" y="{callout_y:.2f}" width="{callout_w:.2f}" height="196" rx="18" fill="#0b1722" stroke="#5e7fa3" stroke-width="1.6"/>')
     lines.append(f'<text x="{callout_x + 18:.2f}" y="{callout_y + 28:.2f}" fill="#dce7f3" font-size="18" font-family="Helvetica, Arial, sans-serif" font-weight="700">Anchor readings</text>')
     for index, cell in enumerate(samples):

@@ -78,10 +78,10 @@ def render_brusselator_hopf_sweep(
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    width = 1280
+    width = 1540
     height = 980
     left = 82.0
-    right = 72.0
+    right = 340.0
     top = 128.0
     panel_gap = 42.0
     panel_height = 220.0
@@ -184,21 +184,22 @@ def render_brusselator_hopf_sweep(
     ]
     for badge_x, badge_width, fill, text_fill, label in badges:
         lines.append(f'<rect x="{badge_x:.2f}" y="{badge_y:.2f}" width="{badge_width:.2f}" height="24" rx="12" fill="{fill}" opacity="0.96"/>')
-        lines.append(f'<text x="{badge_x + 12:.2f}" y="{badge_y + 16:.2f}" fill="{text_fill}" font-size="13" font-family="Helvetica, Arial, sans-serif">{label}</text>')
+        lines.append(f'<text x="{badge_x + 12:.2f}" y="{badge_y + 16:.2f}" fill="{text_fill}" font-size="13" font-family="Helvetica, Arial, sans-serif">{_escape(label)}</text>')
     lines.append(f'<text x="{left + 18:.2f}" y="{band_top + 84:.2f}" fill="#dce7f3" font-size="15" font-family="Helvetica, Arial, sans-serif">The imaginary part stays near one, so the turning tendency remains visible while the real part decides damping versus growth.</text>')
     lines.append(f'<text x="{left + 18:.2f}" y="{band_top + 106:.2f}" fill="#dce7f3" font-size="15" font-family="Helvetica, Arial, sans-serif">That is the local bridge from a calm fixed point to a self-sustained oscillation.</text>')
 
     sample_rows = sweep_brusselator_b_values([1.6, threshold, 2.4], a=a)
-    callout_x = width - 320.0
+    callout_x = left + plot_width + 28.0
     callout_y = 154.0
-    lines.append(f'<rect x="{callout_x:.2f}" y="{callout_y:.2f}" width="250" height="184" rx="18" fill="#0b1722" stroke="#5e7fa3" stroke-width="1.7"/>')
+    lines.append(f'<rect x="{callout_x:.2f}" y="{callout_y:.2f}" width="272" height="192" rx="18" fill="#0b1722" stroke="#5e7fa3" stroke-width="1.7"/>')
     lines.append(f'<text x="{callout_x + 20:.2f}" y="{callout_y + 30:.2f}" fill="#dce7f3" font-size="18" font-family="Helvetica, Arial, sans-serif" font-weight="700">Three anchor settings</text>')
     for index, row in enumerate(sample_rows):
         eig = row.eigenvalues[0]
         sign = '+' if eig.imag >= 0 else '-'
         y = callout_y + 60.0 + index * 42.0
         lines.append(f'<text x="{callout_x + 20:.2f}" y="{y:.2f}" fill="#dce7f3" font-size="15" font-family="Helvetica, Arial, sans-serif">B = {row.b:.2f} → {row.classification}</text>')
-        lines.append(f'<text x="{callout_x + 36:.2f}" y="{y + 20:.2f}" fill="#9fb3c8" font-size="13" font-family="Helvetica, Arial, sans-serif">λ = {eig.real:.2f}{sign}{abs(eig.imag):.2f}i at (x*, y*) = ({row.fixed_point[0]:.1f}, {row.fixed_point[1]:.1f})</text>')
+        lines.append(f'<text x="{callout_x + 36:.2f}" y="{y + 18:.2f}" fill="#9fb3c8" font-size="13" font-family="Helvetica, Arial, sans-serif">λ = {eig.real:.2f}{sign}{abs(eig.imag):.2f}i</text>')
+        lines.append(f'<text x="{callout_x + 36:.2f}" y="{y + 34:.2f}" fill="#9fb3c8" font-size="13" font-family="Helvetica, Arial, sans-serif">(x*, y*) = ({row.fixed_point[0]:.1f}, {row.fixed_point[1]:.1f})</text>')
 
     legend_y = height - 46.0
     lines.append(f'<line x1="{left:.2f}" y1="{legend_y:.2f}" x2="{left + 28:.2f}" y2="{legend_y:.2f}" stroke="#60a5fa" stroke-width="4"/><text x="{left + 40:.2f}" y="{legend_y + 5:.2f}" fill="#dce7f3" font-size="14" font-family="Helvetica, Arial, sans-serif">trace</text>')
