@@ -6,6 +6,7 @@ import unittest
 from phaseportraitlab.analysis import analyze_fixed_points, fixed_point_residuals, trajectories, vector_field
 from phaseportraitlab.brusselator_atlas import build_brusselator_parameter_atlas, estimate_brusselator_cycle_metrics
 from phaseportraitlab.brusselator_sweep import brusselator_hopf_threshold, render_brusselator_hopf_report, sweep_brusselator_b_values
+from phaseportraitlab.chemistry_local_global import render_chemistry_local_global_report
 from phaseportraitlab.chemistry_comparison import render_chemical_oscillator_comparison_report
 from phaseportraitlab.cli import render_system_report
 from phaseportraitlab.integrate import rk4_step
@@ -126,6 +127,15 @@ class PhasePortraitTests(unittest.TestCase):
         selkov_cells = build_selkov_parameter_atlas([0.08], [0.25, 0.6, 0.95])
         report = render_chemical_oscillator_comparison_report(brusselator_cells, selkov_cells)
         self.assertIn("finite oscillatory band", report)
+        self.assertIn("Brusselator", report)
+        self.assertIn("Selkov", report)
+
+    def test_local_global_report_mentions_jacobian_limits(self) -> None:
+        brusselator_cells = build_brusselator_parameter_atlas([1.0], [1.6, 2.1, 2.4])
+        selkov_cells = build_selkov_parameter_atlas([0.08], [0.25, 0.35, 0.6, 0.95])
+        report = render_chemistry_local_global_report(brusselator_cells, selkov_cells)
+        self.assertIn("The Jacobian does **not** answer the amplitude or period questions by itself.", report)
+        self.assertIn("tiny cycle", report)
         self.assertIn("Brusselator", report)
         self.assertIn("Selkov", report)
 

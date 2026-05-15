@@ -31,6 +31,7 @@ The chemistry passes now make that local story slower and more explicit:
 - a generated two-parameter Brusselator atlas that separates exact local stability from measured cycle amplitude and period
 - a generated Selkov atlas that shows a different chemistry geometry: a finite oscillatory band bounded by two exact Hopf curves
 - a generated comparison report that puts the Brusselator's one-sided oscillatory region next to the Selkov model's stable → oscillatory → stable window
+- a generated local-versus-global chemistry note that makes the boundary of Jacobian theory explicit instead of treating Hopf language as the whole story
 - companion notebooks on the gallery tour, the local-linearization pass, and the broader `A`-`B` parameter map
 - generated reports with sampled tables, formulas, and caveats about what is exact versus what is numerically estimated
 
@@ -42,6 +43,7 @@ That makes the chemistry lane more useful than a bare vector field and lighter t
 - generated SVGs, so the output stays sharp in the browser
 - a small library shape instead of one throwaway script
 - companion notebooks for the gallery tour, the local-linearization pass, and the Brusselator parameter atlas
+- a new chemistry notebook on where exact local theory stops and finite-time orbit measurement begins
 - two chemistry atlases plus a comparison report instead of a one-model story
 - tests that check the fixed points, the RK4 stepper, and the chemistry measurement layers
 
@@ -87,11 +89,11 @@ python3 -m unittest discover -s tests
 python3 -m phaseportraitlab.cli linear-saddle lotka-volterra
 ```
 
-The gallery build also refreshes `reports/brusselator-hopf-sweep.md`, `reports/brusselator-parameter-atlas.md`, `reports/selkov-parameter-atlas.md`, and `reports/chemical-oscillator-comparison.md`.
+The gallery build also refreshes `reports/brusselator-hopf-sweep.md`, `reports/brusselator-parameter-atlas.md`, `reports/selkov-parameter-atlas.md`, `reports/chemical-oscillator-comparison.md`, and `reports/chemistry-local-to-global.md`.
 
 ## Notebook
 
-See `notebooks/phase_portrait_tour.ipynb` for the gallery walkthrough, `notebooks/local_linearization_and_hopf.ipynb` for the slower pass on Jacobians, trace, and the Brusselator Hopf threshold, and `notebooks/brusselator_parameter_atlas.ipynb` for the first chemistry-facing `A`-`B` parameter study.
+See `notebooks/phase_portrait_tour.ipynb` for the gallery walkthrough, `notebooks/local_linearization_and_hopf.ipynb` for the slower pass on Jacobians, trace, and the Brusselator Hopf threshold, `notebooks/brusselator_parameter_atlas.ipynb` for the first chemistry-facing `A`-`B` parameter study, and `notebooks/chemistry_local_to_global.ipynb` for the bridge between exact local theory and finite-time cycle measurements across the two chemistry models.
 
 ## Repo layout
 
@@ -102,16 +104,17 @@ See `notebooks/phase_portrait_tour.ipynb` for the gallery walkthrough, `notebook
 - `phaseportraitlab/brusselator_atlas.py` builds the two-parameter Brusselator atlas and estimates post-threshold amplitude/period on the oscillatory side
 - `phaseportraitlab/selkov_atlas.py` builds a second chemistry atlas where the oscillatory regime is a finite band instead of a one-sided half-plane
 - `phaseportraitlab/chemistry_comparison.py` writes the side-by-side comparison note for the two chemistry models
+- `phaseportraitlab/chemistry_local_global.py` writes the local-versus-global chemistry note so the repo is explicit about what the Jacobian does and does not tell you
 - `phaseportraitlab/cli.py` prints fixed-point classifications and eigenvalue hints
 - `phaseportraitlab/svg.py` renders the portraits
 - `phaseportraitlab/gallery.py` writes the asset set
 - `scripts/generate_gallery.py` rebuilds the gallery
-- `reports/brusselator-hopf-sweep.md`, `reports/brusselator-parameter-atlas.md`, `reports/selkov-parameter-atlas.md`, and `reports/chemical-oscillator-comparison.md` are the generated science notes
+- `reports/brusselator-hopf-sweep.md`, `reports/brusselator-parameter-atlas.md`, `reports/selkov-parameter-atlas.md`, `reports/chemical-oscillator-comparison.md`, and `reports/chemistry-local-to-global.md` are the generated science notes
 - `tests/test_systems.py` runs the verification pass
-- `notebooks/phase_portrait_tour.ipynb`, `notebooks/local_linearization_and_hopf.ipynb`, and `notebooks/brusselator_parameter_atlas.ipynb` are the companion science notebooks
+- `notebooks/phase_portrait_tour.ipynb`, `notebooks/local_linearization_and_hopf.ipynb`, `notebooks/brusselator_parameter_atlas.ipynb`, and `notebooks/chemistry_local_to_global.ipynb` are the companion science notebooks
 
 ## Next useful moves
 
 - add one report mode that compares fixed-point types across several systems at once
 - add one nonlinear saddle-style example where the manifolds curve instead of staying perfectly straight
-- add one local-to-global note that explains where Jacobian predictions stop and finite-time orbit measurements begin now that two chemistry models are in play
+- add one third chemically grounded oscillator only if it reveals a genuinely new geometry instead of rephrasing the same Hopf story

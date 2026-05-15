@@ -14,6 +14,7 @@ from phaseportraitlab.brusselator_atlas import (
     write_brusselator_parameter_report,
 )
 from phaseportraitlab.brusselator_sweep import render_brusselator_hopf_sweep, sweep_brusselator_b_range, write_brusselator_hopf_report
+from phaseportraitlab.chemistry_local_global import write_chemistry_local_global_report
 from phaseportraitlab.chemistry_comparison import write_chemical_oscillator_comparison_report
 from phaseportraitlab.gallery import build_gallery
 from phaseportraitlab.selkov_atlas import (
@@ -44,9 +45,11 @@ def main() -> None:
     selkov_path = assets / "selkov-parameter-atlas.svg"
     selkov_report_path = REPO / "reports" / "selkov-parameter-atlas.md"
     chemistry_report_path = REPO / "reports" / "chemical-oscillator-comparison.md"
+    local_global_report_path = REPO / "reports" / "chemistry-local-to-global.md"
     render_selkov_parameter_atlas(selkov_cells, output=selkov_path)
     write_selkov_parameter_report(selkov_cells, selkov_report_path)
     write_chemical_oscillator_comparison_report(atlas_cells, selkov_cells, chemistry_report_path)
+    write_chemistry_local_global_report(atlas_cells, selkov_cells, local_global_report_path)
     paths.append(selkov_path)
 
     for path in paths:
@@ -55,6 +58,7 @@ def main() -> None:
     print(f"WROTE {atlas_report_path}")
     print(f"WROTE {selkov_report_path}")
     print(f"WROTE {chemistry_report_path}")
+    print(f"WROTE {local_global_report_path}")
 
 
 if __name__ == "__main__":
