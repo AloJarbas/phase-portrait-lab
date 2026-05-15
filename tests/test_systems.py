@@ -4,6 +4,7 @@ import math
 import unittest
 
 from phaseportraitlab.analysis import analyze_fixed_points, fixed_point_residuals, trajectories, vector_field
+from phaseportraitlab.brusselator_sweep import brusselator_hopf_threshold, render_brusselator_hopf_report, sweep_brusselator_b_values
 from phaseportraitlab.cli import render_system_report
 from phaseportraitlab.integrate import rk4_step
 from phaseportraitlab.systems import CATALOG, get_system
@@ -47,6 +48,20 @@ class PhasePortraitTests(unittest.TestCase):
         report = render_system_report("linear-saddle")
         self.assertIn("local type: saddle", report)
         self.assertIn("eigenvalues:", report)
+
+    def test_brusselator_hopf_threshold_and_local_types(self) -> None:
+        self.assertAlmostEqual(brusselator_hopf_threshold(1.0), 2.0)
+        rows = sweep_brusselator_b_values([1.6, 2.0, 2.4])
+        self.assertEqual([row.classification for row in rows], ["stable spiral", "center-like", "unstable spiral"])
+        self.assertLess(rows[0].decay_rate, 0.0)
+        self.assertAlmostEqual(rows[1].trace, 0.0, places=4)
+        self.assertGreater(rows[2].decay_rate, 0.0)
+
+    def test_brusselator_report_mentions_threshold(self) -> None:
+        report = render_brusselator_hopf_report(sweep_brusselator_b_values([1.6, 2.0, 2.4]))
+        self.assertIn("Brusselator Hopf sweep", report)
+        self.assertIn("B = 1 + A^2 = 2.00", report)
+        self.assertIn("stable spiral", report)
 
 
 if __name__ == "__main__":

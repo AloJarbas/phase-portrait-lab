@@ -24,6 +24,12 @@ The latest pass adds a local-stability layer too:
 - eigenvalue readouts in the SVG side panel
 - a CLI report for system-by-system local behavior
 
+The new sweep pass makes that local story slower and more explicit:
+
+- a generated Brusselator Hopf-sweep card that shows where the fixed point stops damping and starts repelling
+- a companion notebook on local linearization, Jacobian trace, and the threshold `B = 1 + A^2`
+- a generated report with the sampled sweep table and the exact trace/determinant formulas
+
 That makes the picture more useful than a bare vector field and lighter than a full notebook-only treatment.
 
 ## Why this repo is worth opening
@@ -31,7 +37,7 @@ That makes the picture more useful than a bare vector field and lighter than a f
 - pure Python, no plotting stack required
 - generated SVGs, so the output stays sharp in the browser
 - a small library shape instead of one throwaway script
-- companion notebook for the science side
+- companion notebooks for both the gallery tour and the local-linearization pass
 - tests that check the fixed points, the RK4 stepper, and the new local-stability layer
 
 ## Gallery
@@ -52,6 +58,10 @@ That makes the picture more useful than a bare vector field and lighter than a f
 
 ![Brusselator phase portrait](assets/brusselator-phase-portrait.svg)
 
+### Brusselator Hopf sweep
+
+![Brusselator Hopf sweep](assets/brusselator-hopf-sweep.svg)
+
 ## Quick start
 
 ```bash
@@ -60,24 +70,27 @@ python3 -m unittest discover -s tests
 python3 -m phaseportraitlab.cli linear-saddle lotka-volterra
 ```
 
+The gallery build also refreshes `reports/brusselator-hopf-sweep.md`.
+
 ## Notebook
 
-See `notebooks/phase_portrait_tour.ipynb` for the companion walkthrough with equations, reading cues, and next questions.
+See `notebooks/phase_portrait_tour.ipynb` for the gallery walkthrough and `notebooks/local_linearization_and_hopf.ipynb` for the slower pass on Jacobians, trace, and the Brusselator Hopf threshold.
 
 ## Repo layout
 
 - `phaseportraitlab/systems.py` defines the system catalog
 - `phaseportraitlab/integrate.py` holds the RK4 integrator
 - `phaseportraitlab/analysis.py` builds vector fields, trajectories, and Jacobian-based fixed-point analysis
+- `phaseportraitlab/brusselator_sweep.py` scans the Brusselator across `B`, renders the Hopf card, and writes the sweep report
 - `phaseportraitlab/cli.py` prints fixed-point classifications and eigenvalue hints
 - `phaseportraitlab/svg.py` renders the portraits
 - `phaseportraitlab/gallery.py` writes the asset set
 - `scripts/generate_gallery.py` rebuilds the gallery
+- `reports/brusselator-hopf-sweep.md` is the generated sweep note with formulas and sampled rows
 - `tests/test_systems.py` runs the verification pass
-- `notebooks/phase_portrait_tour.ipynb` is the companion science notebook
+- `notebooks/phase_portrait_tour.ipynb` and `notebooks/local_linearization_and_hopf.ipynb` are the companion science notebooks
 
 ## Next useful moves
 
-- add one notebook on local linearization and Jacobian intuition so the new classification layer has a slower companion
-- add one parameter sweep that shows a calm node turning into an oscillator in a controlled way
 - add one report mode that compares fixed-point types across several systems at once
+- add one nonlinear saddle-style example where the manifolds curve instead of staying perfectly straight

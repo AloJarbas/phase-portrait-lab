@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 980" width="1280" height="980">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#081018"/>
+    <stop offset="100%" stop-color="#101d2a"/>
+  </linearGradient>
+</defs>
+<rect width="100%" height="100%" fill="url(#bg)"/>
+<text x="82" y="54" fill="#e6edf3" font-size="34" font-family="Helvetica, Arial, sans-serif" font-weight="700">Brusselator Hopf sweep</text>
+<text x="82" y="84" fill="#9fb3c8" font-size="18" font-family="Helvetica, Arial, sans-serif">For A = 1.0, the fixed point stays at x = A while the damping flips sign at B = 1 + A² = 2.00.</text>
+<rect x="82.00" y="128.00" width="1126.00" height="220.00" rx="18" fill="#122131" stroke="#5e7fa3" stroke-width="2"/>
+<text x="100.00" y="158.00" fill="#dce7f3" font-size="18" font-family="Helvetica, Arial, sans-serif" font-weight="700">trace of the Jacobian at the fixed point</text>
+<line x1="82.00" y1="238.00" x2="1208.00" y2="238.00" stroke="#334155" stroke-width="1.5" stroke-dasharray="8 6"/>
+<line x1="645.00" y1="168.00" x2="645.00" y2="330.00" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="9 7"/>
+<rect x="82.00" y="390.00" width="1126.00" height="220.00" rx="18" fill="#122131" stroke="#5e7fa3" stroke-width="2"/>
+<text x="100.00" y="420.00" fill="#dce7f3" font-size="18" font-family="Helvetica, Arial, sans-serif" font-weight="700">eigenvalue real part versus oscillation frequency</text>
+<line x1="82.00" y1="500.00" x2="1208.00" y2="500.00" stroke="#334155" stroke-width="1.5" stroke-dasharray="8 6"/>
+<line x1="645.00" y1="430.00" x2="645.00" y2="592.00" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="9 7"/>
+<line x1="82.00" y1="168.00" x2="82.00" y2="762.00" stroke="#223445" stroke-width="1" opacity="0.7"/>
+<text x="82.00" y="786.00" fill="#8aa3bc" font-size="13" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">1.20</text>
+<line x1="222.75" y1="168.00" x2="222.75" y2="762.00" stroke="#223445" stroke-width="1" opacity="0.7"/>
+<text x="222.75" y="786.00" fill="#8aa3bc" font-size="13" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">1.40</text>
+<line x1="363.50" y1="168.00" x2="363.50" y2="762.00" stroke="#223445" stroke-width="1" opacity="0.7"/>
+<text x="363.50" y="786.00" fill="#8aa3bc" font-size="13" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">1.60</text>
+<line x1="504.25" y1="168.00" x2="504.25" y2="762.00" stroke="#223445" stroke-width="1" opacity="0.7"/>
+<text x="504.25" y="786.00" fill="#8aa3bc" font-size="13" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">1.80</text>
+<line x1="645.00" y1="168.00" x2="645.00" y2="762.00" stroke="#223445" stroke-width="1" opacity="0.7"/>
+<text x="645.00" y="786.00" fill="#8aa3bc" font-size="13" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">2.00</text>
+<line x1="785.75" y1="168.00" x2="785.75" y2="762.00" stroke="#223445" stroke-width="1" opacity="0.7"/>
+<text x="785.75" y="786.00" fill="#8aa3bc" font-size="13" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">2.20</text>
+<line x1="926.50" y1="168.00" x2="926.50" y2="762.00" stroke="#223445" stroke-width="1" opacity="0.7"/>
+<text x="926.50" y="786.00" fill="#8aa3bc" font-size="13" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">2.40</text>
+<line x1="1067.25" y1="168.00" x2="1067.25" y2="762.00" stroke="#223445" stroke-width="1" opacity="0.7"/>
+<text x="1067.25" y="786.00" fill="#8aa3bc" font-size="13" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">2.60</text>
+<line x1="1208.00" y1="168.00" x2="1208.00" y2="762.00" stroke="#223445" stroke-width="1" opacity="0.7"/>
+<text x="1208.00" y="786.00" fill="#8aa3bc" font-size="13" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">2.80</text>
+<text x="70.00" y="334.00" fill="#8aa3bc" font-size="13" text-anchor="end" font-family="Helvetica, Arial, sans-serif">-0.94</text>
+<text x="70.00" y="288.00" fill="#8aa3bc" font-size="13" text-anchor="end" font-family="Helvetica, Arial, sans-serif">-0.47</text>
+<text x="70.00" y="196.00" fill="#8aa3bc" font-size="13" text-anchor="end" font-family="Helvetica, Arial, sans-serif">0.47</text>
+<text x="70.00" y="150.00" fill="#8aa3bc" font-size="13" text-anchor="end" font-family="Helvetica, Arial, sans-serif">0.94</text>
+<text x="70.00" y="596.00" fill="#8aa3bc" font-size="13" text-anchor="end" font-family="Helvetica, Arial, sans-serif">-1.18</text>
+<text x="70.00" y="550.00" fill="#8aa3bc" font-size="13" text-anchor="end" font-family="Helvetica, Arial, sans-serif">-0.59</text>
+<text x="70.00" y="458.00" fill="#8aa3bc" font-size="13" text-anchor="end" font-family="Helvetica, Arial, sans-serif">0.59</text>
+<text x="70.00" y="412.00" fill="#8aa3bc" font-size="13" text-anchor="end" font-family="Helvetica, Arial, sans-serif">1.18</text>
+<polyline fill="none" stroke="#60a5fa" stroke-width="3.8" stroke-linejoin="round" stroke-linecap="round" points="82.00,315.97 152.38,306.22 222.75,296.47 293.13,286.73 363.50,276.98 433.88,267.24 504.25,257.49 574.62,247.75 645.00,238.00 715.37,228.25 785.75,218.51 856.12,208.76 926.50,199.02 996.88,189.27 1067.25,179.53 1137.62,169.78 1208.00,160.03"/>
+<polyline fill="none" stroke="#f97316" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round" points="82.00,531.19 152.38,527.29 222.75,523.39 293.13,519.49 363.50,515.59 433.88,511.69 504.25,507.80 574.62,503.90 645.00,500.00 715.37,496.10 785.75,492.20 856.12,488.31 926.50,484.41 996.88,480.51 1067.25,476.61 1137.62,472.71 1208.00,468.81"/>
+<polyline fill="none" stroke="#4ade80" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" points="82.00,428.54 152.38,426.97 222.75,425.63 293.13,424.51 363.50,423.61 433.88,422.92 504.25,422.42 574.62,422.13 645.00,422.03 715.37,422.13 785.75,422.42 856.12,422.92 926.50,423.61 996.88,424.51 1067.25,425.63 1137.62,426.97 1208.00,428.54"/>
+<circle cx="82.00" cy="315.97" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="82.00" cy="531.19" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="82.00" cy="428.54" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="152.38" cy="306.22" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="152.38" cy="527.29" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="152.38" cy="426.97" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="222.75" cy="296.47" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="222.75" cy="523.39" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="222.75" cy="425.63" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="293.13" cy="286.73" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="293.13" cy="519.49" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="293.13" cy="424.51" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="363.50" cy="276.98" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="363.50" cy="515.59" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="363.50" cy="423.61" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="433.88" cy="267.24" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="433.88" cy="511.69" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="433.88" cy="422.92" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="504.25" cy="257.49" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="504.25" cy="507.80" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="504.25" cy="422.42" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="574.62" cy="247.75" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="574.62" cy="503.90" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="574.62" cy="422.13" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="645.00" cy="238.00" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="645.00" cy="500.00" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="645.00" cy="422.03" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="715.37" cy="228.25" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="715.37" cy="496.10" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="715.37" cy="422.13" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="785.75" cy="218.51" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="785.75" cy="492.20" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="785.75" cy="422.42" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="856.12" cy="208.76" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="856.12" cy="488.31" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="856.12" cy="422.92" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="926.50" cy="199.02" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="926.50" cy="484.41" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="926.50" cy="423.61" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="996.88" cy="189.27" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="996.88" cy="480.51" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="996.88" cy="424.51" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="1067.25" cy="179.53" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="1067.25" cy="476.61" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="1067.25" cy="425.63" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="1137.62" cy="169.78" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="1137.62" cy="472.71" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="1137.62" cy="426.97" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<circle cx="1208.00" cy="160.03" r="5.2" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<circle cx="1208.00" cy="468.81" r="4.6" fill="#fed7aa" stroke="#f97316" stroke-width="2"/>
+<circle cx="1208.00" cy="428.54" r="4.6" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+<rect x="82.00" y="652.00" width="1126.00" height="110.00" rx="18" fill="#122131" stroke="#5e7fa3" stroke-width="2"/>
+<text x="100.00" y="684.00" fill="#dce7f3" font-size="18" font-family="Helvetica, Arial, sans-serif" font-weight="700">local reading of the same fixed point</text>
+<rect x="100.00" y="692.00" width="208.00" height="24" rx="12" fill="#0f2c2a" opacity="0.96"/>
+<text x="112.00" y="708.00" fill="#a7f3d0" font-size="13" font-family="Helvetica, Arial, sans-serif">B < 2.00: stable spiral</text>
+<rect x="328.00" y="692.00" width="232.00" height="24" rx="12" fill="#3f2a12" opacity="0.96"/>
+<text x="340.00" y="708.00" fill="#fde68a" font-size="13" font-family="Helvetica, Arial, sans-serif">B = 2.00: Hopf threshold</text>
+<rect x="580.00" y="692.00" width="244.00" height="24" rx="12" fill="#32151a" opacity="0.96"/>
+<text x="592.00" y="708.00" fill="#fca5a5" font-size="13" font-family="Helvetica, Arial, sans-serif">B > 2.00: unstable spiral</text>
+<text x="100.00" y="736.00" fill="#dce7f3" font-size="15" font-family="Helvetica, Arial, sans-serif">The imaginary part stays near one, so the turning tendency remains visible while the real part decides damping versus growth.</text>
+<text x="100.00" y="758.00" fill="#dce7f3" font-size="15" font-family="Helvetica, Arial, sans-serif">That is the local bridge from a calm fixed point to a self-sustained oscillation.</text>
+<rect x="960.00" y="154.00" width="250" height="184" rx="18" fill="#0b1722" stroke="#5e7fa3" stroke-width="1.7"/>
+<text x="980.00" y="184.00" fill="#dce7f3" font-size="18" font-family="Helvetica, Arial, sans-serif" font-weight="700">Three anchor settings</text>
+<text x="980.00" y="214.00" fill="#dce7f3" font-size="15" font-family="Helvetica, Arial, sans-serif">B = 1.60 → stable spiral</text>
+<text x="996.00" y="234.00" fill="#9fb3c8" font-size="13" font-family="Helvetica, Arial, sans-serif">λ = -0.20+0.98i at (x*, y*) = (1.0, 1.6)</text>
+<text x="980.00" y="256.00" fill="#dce7f3" font-size="15" font-family="Helvetica, Arial, sans-serif">B = 2.00 → center-like</text>
+<text x="996.00" y="276.00" fill="#9fb3c8" font-size="13" font-family="Helvetica, Arial, sans-serif">λ = 0.00+1.00i at (x*, y*) = (1.0, 2.0)</text>
+<text x="980.00" y="298.00" fill="#dce7f3" font-size="15" font-family="Helvetica, Arial, sans-serif">B = 2.40 → unstable spiral</text>
+<text x="996.00" y="318.00" fill="#9fb3c8" font-size="13" font-family="Helvetica, Arial, sans-serif">λ = 0.20+0.98i at (x*, y*) = (1.0, 2.4)</text>
+<line x1="82.00" y1="934.00" x2="110.00" y2="934.00" stroke="#60a5fa" stroke-width="4"/><text x="122.00" y="939.00" fill="#dce7f3" font-size="14" font-family="Helvetica, Arial, sans-serif">trace</text>
+<line x1="212.00" y1="934.00" x2="240.00" y2="934.00" stroke="#f97316" stroke-width="4"/><text x="252.00" y="939.00" fill="#dce7f3" font-size="14" font-family="Helvetica, Arial, sans-serif">Re(λ)</text>
+<line x1="332.00" y1="934.00" x2="360.00" y2="934.00" stroke="#4ade80" stroke-width="4"/><text x="372.00" y="939.00" fill="#dce7f3" font-size="14" font-family="Helvetica, Arial, sans-serif">|Im(λ)|</text>
+<line x1="474.00" y1="924.00" x2="474.00" y2="944.00" stroke="#fbbf24" stroke-width="3" stroke-dasharray="9 7"/><text x="488.00" y="939.00" fill="#dce7f3" font-size="14" font-family="Helvetica, Arial, sans-serif">Hopf threshold B = 2.00</text>
+</svg>

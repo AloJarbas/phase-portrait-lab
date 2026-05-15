@@ -101,8 +101,7 @@ def lotka_volterra() -> PlanarSystem:
     )
 
 
-def brusselator() -> PlanarSystem:
-    a, b = 1.0, 2.4
+def brusselator(*, a: float = 1.0, b: float = 2.4) -> PlanarSystem:
 
     def derivatives(x: float, y: float) -> State:
         return (a + x * x * y - (b + 1.0) * x, b * x - x * x * y)
