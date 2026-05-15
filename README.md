@@ -24,21 +24,22 @@ The latest pass adds a local-stability layer too:
 - eigenvalue readouts in the SVG side panel
 - a CLI report for system-by-system local behavior
 
-The new sweep pass makes that local story slower and more explicit:
+The new Brusselator passes make that local story slower and more explicit:
 
 - a generated Brusselator Hopf-sweep card that shows where the fixed point stops damping and starts repelling
-- a companion notebook on local linearization, Jacobian trace, and the threshold `B = 1 + A^2`
-- a generated report with the sampled sweep table and the exact trace/determinant formulas
+- a generated two-parameter Brusselator atlas that separates exact local stability from measured cycle amplitude and period
+- companion notebooks on both the one-parameter Hopf threshold and the broader `A`-`B` parameter map
+- generated reports with sampled tables, formulas, and caveats about what is exact versus what is numerically estimated
 
-That makes the picture more useful than a bare vector field and lighter than a full notebook-only treatment.
+That makes the chemistry example more useful than a bare vector field and lighter than a full notebook-only treatment.
 
 ## Why this repo is worth opening
 
 - pure Python, no plotting stack required
 - generated SVGs, so the output stays sharp in the browser
 - a small library shape instead of one throwaway script
-- companion notebooks for both the gallery tour and the local-linearization pass
-- tests that check the fixed points, the RK4 stepper, and the new local-stability layer
+- companion notebooks for the gallery tour, the local-linearization pass, and the new Brusselator parameter atlas
+- tests that check the fixed points, the RK4 stepper, and the Brusselator local-to-global measurement layer
 
 ## Gallery
 
@@ -62,6 +63,10 @@ That makes the picture more useful than a bare vector field and lighter than a f
 
 ![Brusselator Hopf sweep](assets/brusselator-hopf-sweep.svg)
 
+### Brusselator parameter atlas
+
+![Brusselator parameter atlas](assets/brusselator-parameter-atlas.svg)
+
 ## Quick start
 
 ```bash
@@ -70,11 +75,11 @@ python3 -m unittest discover -s tests
 python3 -m phaseportraitlab.cli linear-saddle lotka-volterra
 ```
 
-The gallery build also refreshes `reports/brusselator-hopf-sweep.md`.
+The gallery build also refreshes `reports/brusselator-hopf-sweep.md` and `reports/brusselator-parameter-atlas.md`.
 
 ## Notebook
 
-See `notebooks/phase_portrait_tour.ipynb` for the gallery walkthrough and `notebooks/local_linearization_and_hopf.ipynb` for the slower pass on Jacobians, trace, and the Brusselator Hopf threshold.
+See `notebooks/phase_portrait_tour.ipynb` for the gallery walkthrough, `notebooks/local_linearization_and_hopf.ipynb` for the slower pass on Jacobians, trace, and the Brusselator Hopf threshold, and `notebooks/brusselator_parameter_atlas.ipynb` for the chemistry-facing `A`-`B` parameter study.
 
 ## Repo layout
 
@@ -82,15 +87,17 @@ See `notebooks/phase_portrait_tour.ipynb` for the gallery walkthrough and `noteb
 - `phaseportraitlab/integrate.py` holds the RK4 integrator
 - `phaseportraitlab/analysis.py` builds vector fields, trajectories, and Jacobian-based fixed-point analysis
 - `phaseportraitlab/brusselator_sweep.py` scans the Brusselator across `B`, renders the Hopf card, and writes the sweep report
+- `phaseportraitlab/brusselator_atlas.py` builds the two-parameter Brusselator atlas and estimates post-threshold amplitude/period on the oscillatory side
 - `phaseportraitlab/cli.py` prints fixed-point classifications and eigenvalue hints
 - `phaseportraitlab/svg.py` renders the portraits
 - `phaseportraitlab/gallery.py` writes the asset set
 - `scripts/generate_gallery.py` rebuilds the gallery
-- `reports/brusselator-hopf-sweep.md` is the generated sweep note with formulas and sampled rows
+- `reports/brusselator-hopf-sweep.md` and `reports/brusselator-parameter-atlas.md` are the generated Brusselator notes
 - `tests/test_systems.py` runs the verification pass
-- `notebooks/phase_portrait_tour.ipynb` and `notebooks/local_linearization_and_hopf.ipynb` are the companion science notebooks
+- `notebooks/phase_portrait_tour.ipynb`, `notebooks/local_linearization_and_hopf.ipynb`, and `notebooks/brusselator_parameter_atlas.ipynb` are the companion science notebooks
 
 ## Next useful moves
 
 - add one report mode that compares fixed-point types across several systems at once
 - add one nonlinear saddle-style example where the manifolds curve instead of staying perfectly straight
+- compare the Brusselator atlas against one second chemical oscillator so the local-to-global chemistry lane stops at something broader than one model

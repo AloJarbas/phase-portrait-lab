@@ -4,6 +4,7 @@ import math
 import unittest
 
 from phaseportraitlab.analysis import analyze_fixed_points, fixed_point_residuals, trajectories, vector_field
+from phaseportraitlab.brusselator_atlas import build_brusselator_parameter_atlas, estimate_brusselator_cycle_metrics
 from phaseportraitlab.brusselator_sweep import brusselator_hopf_threshold, render_brusselator_hopf_report, sweep_brusselator_b_values
 from phaseportraitlab.cli import render_system_report
 from phaseportraitlab.integrate import rk4_step
@@ -62,6 +63,24 @@ class PhasePortraitTests(unittest.TestCase):
         self.assertIn("Brusselator Hopf sweep", report)
         self.assertIn("B = 1 + A^2 = 2.00", report)
         self.assertIn("stable spiral", report)
+
+    def test_brusselator_cycle_metrics_above_threshold(self) -> None:
+        metrics = estimate_brusselator_cycle_metrics(1.0, 2.4)
+        self.assertGreater(metrics.x_amplitude, 0.7)
+        self.assertGreater(metrics.y_amplitude, 0.9)
+        self.assertIsNotNone(metrics.period)
+        self.assertAlmostEqual(metrics.period or 0.0, 6.5, delta=0.25)
+
+    def test_brusselator_parameter_atlas_zeroes_stable_side(self) -> None:
+        cells = build_brusselator_parameter_atlas([1.0], [1.6, 2.4])
+        self.assertEqual(len(cells), 2)
+        stable, unstable = cells
+        self.assertEqual(stable.classification, "stable spiral")
+        self.assertEqual(stable.x_amplitude, 0.0)
+        self.assertEqual(stable.period, None)
+        self.assertEqual(unstable.classification, "unstable spiral")
+        self.assertGreater(unstable.x_amplitude, 0.7)
+        self.assertGreater(unstable.mean_radius, 0.7)
 
 
 if __name__ == "__main__":
