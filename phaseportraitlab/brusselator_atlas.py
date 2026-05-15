@@ -439,7 +439,8 @@ def _append_gradient_legend(
     label_x: float,
     caption: str,
 ) -> None:
-    gradient_id = f"legend-{abs(hash((x, y, caption))) % 10_000_000}"
+    safe_caption = "".join(character.lower() if character.isalnum() else "-" for character in caption).strip("-") or "legend"
+    gradient_id = f"legend-{safe_caption}-{int(round(x))}-{int(round(y))}"
     lines.append(f'<linearGradient id="{gradient_id}" x1="0" y1="1" x2="0" y2="0">')
     for offset, color in stops:
         lines.append(f'  <stop offset="{offset * 100:.1f}%" stop-color="{color}"/>')

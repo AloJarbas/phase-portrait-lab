@@ -839,11 +839,11 @@
 <text x="92.00" y="958.00" fill="#8aa3bc" font-size="13" text-anchor="end" font-family="Helvetica, Arial, sans-serif">6.00</text>
 <text x="655.00" y="1358.00" fill="#dce7f3" font-size="16" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">A</text>
 <text x="38.00" y="1132.00" fill="#dce7f3" font-size="16" text-anchor="middle" transform="rotate(-90 38.00 1132.00)" font-family="Helvetica, Arial, sans-serif">B</text>
-<linearGradient id="legend-9471245" x1="0" y1="1" x2="0" y2="0">
+<linearGradient id="legend-local-side-1232-220" x1="0" y1="1" x2="0" y2="0">
   <stop offset="0.0%" stop-color="#2563eb"/>
   <stop offset="100.0%" stop-color="#fb7185"/>
 </linearGradient>
-<rect x="1232.00" y="220.00" width="34.00" height="210.00" rx="12" fill="url(#legend-9471245)" stroke="#5e7fa3" stroke-width="1.5"/>
+<rect x="1232.00" y="220.00" width="34.00" height="210.00" rx="12" fill="url(#legend-local-side-1232-220)" stroke="#5e7fa3" stroke-width="1.5"/>
 <text x="1232.00" y="206.00" fill="#dce7f3" font-size="14" font-family="Helvetica, Arial, sans-serif">local side</text>
 <line x1="1270.00" y1="430.00" x2="1276.00" y2="430.00" stroke="#dce7f3" stroke-width="1.2"/>
 <text x="1280.00" y="434.00" fill="#9fb3c8" font-size="12" font-family="Helvetica, Arial, sans-serif">stable</text>
@@ -851,12 +851,12 @@
 <text x="1280.00" y="329.00" fill="#9fb3c8" font-size="12" font-family="Helvetica, Arial, sans-serif">threshold</text>
 <line x1="1270.00" y1="220.00" x2="1276.00" y2="220.00" stroke="#dce7f3" stroke-width="1.2"/>
 <text x="1280.00" y="224.00" fill="#9fb3c8" font-size="12" font-family="Helvetica, Arial, sans-serif">oscillatory</text>
-<linearGradient id="legend-4122462" x1="0" y1="1" x2="0" y2="0">
+<linearGradient id="legend-x-amplitude--95--cap-1232-658" x1="0" y1="1" x2="0" y2="0">
   <stop offset="0.0%" stop-color="#0b1722"/>
   <stop offset="50.0%" stop-color="#0f766e"/>
   <stop offset="100.0%" stop-color="#fde68a"/>
 </linearGradient>
-<rect x="1232.00" y="658.00" width="34.00" height="210.00" rx="12" fill="url(#legend-4122462)" stroke="#5e7fa3" stroke-width="1.5"/>
+<rect x="1232.00" y="658.00" width="34.00" height="210.00" rx="12" fill="url(#legend-x-amplitude--95--cap-1232-658)" stroke="#5e7fa3" stroke-width="1.5"/>
 <text x="1232.00" y="644.00" fill="#dce7f3" font-size="14" font-family="Helvetica, Arial, sans-serif">x amplitude (95% cap)</text>
 <line x1="1270.00" y1="868.00" x2="1276.00" y2="868.00" stroke="#dce7f3" stroke-width="1.2"/>
 <text x="1280.00" y="872.00" fill="#9fb3c8" font-size="12" font-family="Helvetica, Arial, sans-serif">0.00</text>
@@ -864,12 +864,12 @@
 <text x="1280.00" y="767.00" fill="#9fb3c8" font-size="12" font-family="Helvetica, Arial, sans-serif">3.33</text>
 <line x1="1270.00" y1="658.00" x2="1276.00" y2="658.00" stroke="#dce7f3" stroke-width="1.2"/>
 <text x="1280.00" y="662.00" fill="#9fb3c8" font-size="12" font-family="Helvetica, Arial, sans-serif">6.66</text>
-<linearGradient id="legend-5754732" x1="0" y1="1" x2="0" y2="0">
+<linearGradient id="legend-period--95--cap-1232-1072" x1="0" y1="1" x2="0" y2="0">
   <stop offset="0.0%" stop-color="#0b1722"/>
   <stop offset="50.0%" stop-color="#7c3aed"/>
   <stop offset="100.0%" stop-color="#bef264"/>
 </linearGradient>
-<rect x="1232.00" y="1072.00" width="34.00" height="210.00" rx="12" fill="url(#legend-5754732)" stroke="#5e7fa3" stroke-width="1.5"/>
+<rect x="1232.00" y="1072.00" width="34.00" height="210.00" rx="12" fill="url(#legend-period--95--cap-1232-1072)" stroke="#5e7fa3" stroke-width="1.5"/>
 <text x="1232.00" y="1058.00" fill="#dce7f3" font-size="14" font-family="Helvetica, Arial, sans-serif">period (95% cap)</text>
 <line x1="1270.00" y1="1282.00" x2="1276.00" y2="1282.00" stroke="#dce7f3" stroke-width="1.2"/>
 <text x="1280.00" y="1286.00" fill="#9fb3c8" font-size="12" font-family="Helvetica, Arial, sans-serif">0.0</text>

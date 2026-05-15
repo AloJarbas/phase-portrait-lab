@@ -134,6 +134,35 @@ def brusselator(*, a: float = 1.0, b: float = 2.4) -> PlanarSystem:
     )
 
 
+def selkov(*, a: float = 0.08, b: float = 0.6) -> PlanarSystem:
+
+    def derivatives(x: float, y: float) -> State:
+        return (-x + a * y + x * x * y, b - a * y - x * x * y)
+
+    def dx_nullclines(x_range: tuple[float, float]) -> list[list[State]]:
+        def curve(x: float) -> float | None:
+            return x / (a + x * x)
+        return sample_curve(curve, x_range, y_limit=6.0)
+
+    def dy_nullclines(x_range: tuple[float, float]) -> list[list[State]]:
+        def curve(x: float) -> float | None:
+            return b / (a + x * x)
+        return sample_curve(curve, x_range, y_limit=6.0)
+
+    return PlanarSystem(
+        slug="selkov",
+        title="Selkov glycolysis oscillator",
+        description="A compact glycolytic oscillator whose fixed point is stable, then unstable, then stable again as the drive parameter crosses a finite Hopf band.",
+        x_range=(0.0, 1.8),
+        y_range=(0.0, 2.8),
+        derivatives=derivatives,
+        fixed_points=((b, b / (a + b * b)),),
+        trajectories=((0.18, 0.45), (0.35, 2.1), (1.1, 0.6), (1.45, 2.15)),
+        nullclines_dx=dx_nullclines,
+        nullclines_dy=dy_nullclines,
+    )
+
+
 def linear_saddle() -> PlanarSystem:
     def derivatives(x: float, y: float) -> State:
         return (x, -y)
@@ -160,7 +189,7 @@ def linear_saddle() -> PlanarSystem:
     )
 
 
-CATALOG: tuple[PlanarSystem, ...] = (linear_saddle(), vandepol(), lotka_volterra(), brusselator())
+CATALOG: tuple[PlanarSystem, ...] = (linear_saddle(), vandepol(), lotka_volterra(), brusselator(), selkov())
 
 
 def get_system(slug: str) -> PlanarSystem:
