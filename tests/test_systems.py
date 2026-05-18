@@ -8,6 +8,11 @@ from phaseportraitlab.brusselator_atlas import build_brusselator_parameter_atlas
 from phaseportraitlab.brusselator_sweep import brusselator_hopf_threshold, render_brusselator_hopf_report, sweep_brusselator_b_values
 from phaseportraitlab.chemistry_local_global import render_chemistry_local_global_report
 from phaseportraitlab.chemistry_comparison import render_chemical_oscillator_comparison_report
+from phaseportraitlab.chemistry_horizon_compare import (
+    build_brusselator_horizon_rows,
+    build_selkov_horizon_rows,
+    render_chemistry_horizon_compare_report,
+)
 from phaseportraitlab.cli import render_system_report
 from phaseportraitlab.integrate import rk4_step
 from phaseportraitlab.selkov_atlas import build_selkov_parameter_atlas, estimate_selkov_cycle_metrics, selkov_hopf_band
@@ -136,6 +141,23 @@ class PhasePortraitTests(unittest.TestCase):
         report = render_chemistry_local_global_report(brusselator_cells, selkov_cells)
         self.assertIn("The Jacobian does **not** answer the amplitude or period questions by itself.", report)
         self.assertIn("tiny cycle", report)
+        self.assertIn("Brusselator", report)
+        self.assertIn("Selkov", report)
+
+    def test_horizon_sidecar_shows_near_threshold_amplitude_gap(self) -> None:
+        brusselator_rows = build_brusselator_horizon_rows()
+        selkov_rows = build_selkov_horizon_rows()
+
+        self.assertGreater(brusselator_rows[0].amplitude_gap, 0.08)
+        self.assertLess(brusselator_rows[-1].amplitude_gap, 0.005)
+        self.assertGreater(selkov_rows[0].amplitude_gap, 0.03)
+        self.assertLess(selkov_rows[-1].amplitude_gap, 0.005)
+        self.assertLess(max(row.period_gap for row in brusselator_rows + selkov_rows), 0.07)
+
+    def test_horizon_sidecar_report_mentions_period_stability(self) -> None:
+        report = render_chemistry_horizon_compare_report(build_brusselator_horizon_rows(), build_selkov_horizon_rows())
+        self.assertIn("Chemistry horizon convergence sidecar", report)
+        self.assertIn("period is much less sensitive", report)
         self.assertIn("Brusselator", report)
         self.assertIn("Selkov", report)
 

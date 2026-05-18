@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1380 1500" width="1380" height="1500">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#081018"/>
+    <stop offset="100%" stop-color="#101d2a"/>
+  </linearGradient>
+</defs>
+<rect width="100%" height="100%" fill="url(#bg)"/>
+<text x="70.0" y="52.0" fill="#dce7f3" font-size="34" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="700">Near-threshold chemistry: amplitude settles slower than period</text>
+<text x="70.0" y="82.0" fill="#9fb3c8" font-size="16" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">The Hopf boundary is exact. The newborn cycle size is not. Short settle windows overstate amplitude long before they noticeably move the period.</text>
+<rect x="70.0" y="96.0" width="280.0" height="24.0" rx="12" fill="#122131" stroke="#58708c" stroke-width="1.0"/>
+<line x1="88.0" y1="108.0" x2="122.0" y2="108.0" stroke="#f97316" stroke-width="4.0"/>
+<text x="132.0" y="113.0" fill="#dce7f3" font-size="13" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">short horizon</text>
+<line x1="224.0" y1="108.0" x2="258.0" y2="108.0" stroke="#38bdf8" stroke-width="4.0"/>
+<text x="268.0" y="113.0" fill="#dce7f3" font-size="13" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">long horizon</text>
+<rect x="70.0" y="144.0" width="592.0" height="320.0" rx="20" fill="#122131" stroke="#58708c" stroke-width="1.8"/>
+<text x="88.0" y="174.0" fill="#dce7f3" font-size="20" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="700">Brusselator x-amplitude near B = 1 + A²</text>
+<text x="88.0" y="198.0" fill="#9fb3c8" font-size="13" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">A = 1.00; short and long horizons tell different stories right after onset</text>
+<line x1="134.0" y1="216.0" x2="638.0" y2="216.0" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="220.0" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.77</text>
+<line x1="134.0" y1="254.8" x2="638.0" y2="254.8" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="258.8" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.62</text>
+<line x1="134.0" y1="293.6" x2="638.0" y2="293.6" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="297.6" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.46</text>
+<line x1="134.0" y1="332.4" x2="638.0" y2="332.4" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="336.4" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.31</text>
+<line x1="134.0" y1="371.2" x2="638.0" y2="371.2" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="375.2" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.15</text>
+<line x1="134.0" y1="410.0" x2="638.0" y2="410.0" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="414.0" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.00</text>
+<line x1="134.0" y1="216.0" x2="134.0" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="134.0" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.01</text>
+<line x1="234.8" y1="216.0" x2="234.8" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="234.8" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.06</text>
+<line x1="335.6" y1="216.0" x2="335.6" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="335.6" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.12</text>
+<line x1="436.4" y1="216.0" x2="436.4" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="436.4" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.17</text>
+<line x1="537.2" y1="216.0" x2="537.2" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="537.2" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.23</text>
+<line x1="638.0" y1="216.0" x2="638.0" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="638.0" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.28</text>
+<line x1="134.0" y1="216.0" x2="134.0" y2="410.0" stroke="#89a2bc" stroke-width="2.0"/>
+<line x1="134.0" y1="410.0" x2="638.0" y2="410.0" stroke="#89a2bc" stroke-width="2.0"/>
+<polyline fill="none" stroke="#f97316" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" points="134.0,351.0 152.7,347.1 171.3,343.1 208.7,334.9 264.7,321.9 339.3,303.5 451.3,277.0 638.0,236.8"/>
+<polyline fill="none" stroke="#38bdf8" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" points="134.0,378.4 152.7,368.2 171.3,359.1 208.7,343.8 264.7,325.1 339.3,304.2 451.3,277.0 638.0,236.8"/>
+<circle cx="134.0" cy="351.0" r="4.0" fill="#f97316"/>
+<circle cx="152.7" cy="347.1" r="4.0" fill="#f97316"/>
+<circle cx="171.3" cy="343.1" r="4.0" fill="#f97316"/>
+<circle cx="208.7" cy="334.9" r="4.0" fill="#f97316"/>
+<circle cx="264.7" cy="321.9" r="4.0" fill="#f97316"/>
+<circle cx="339.3" cy="303.5" r="4.0" fill="#f97316"/>
+<circle cx="451.3" cy="277.0" r="4.0" fill="#f97316"/>
+<circle cx="638.0" cy="236.8" r="4.0" fill="#f97316"/>
+<circle cx="134.0" cy="378.4" r="4.0" fill="#38bdf8"/>
+<circle cx="152.7" cy="368.2" r="4.0" fill="#38bdf8"/>
+<circle cx="171.3" cy="359.1" r="4.0" fill="#38bdf8"/>
+<circle cx="208.7" cy="343.8" r="4.0" fill="#38bdf8"/>
+<circle cx="264.7" cy="325.1" r="4.0" fill="#38bdf8"/>
+<circle cx="339.3" cy="304.2" r="4.0" fill="#38bdf8"/>
+<circle cx="451.3" cy="277.0" r="4.0" fill="#38bdf8"/>
+<circle cx="638.0" cy="236.8" r="4.0" fill="#38bdf8"/>
+<text x="386.0" y="458.0" fill="#dce7f3" font-size="14" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">ΔB above the Hopf curve</text>
+<text x="90.0" y="448.0" fill="#c8d6e5" font-size="12" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">At ΔB=0.01, the short horizon adds 0.11 of extra x-amplitude; by ΔB=0.28, the gap is -0.00.</text>
+<rect x="732.0" y="144.0" width="592.0" height="320.0" rx="20" fill="#122131" stroke="#58708c" stroke-width="1.8"/>
+<text x="750.0" y="174.0" fill="#dce7f3" font-size="20" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="700">Selkov x-amplitude just inside the lower Hopf edge</text>
+<text x="750.0" y="198.0" fill="#9fb3c8" font-size="13" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">a = 0.08; the same finite-time bias shows up inside the oscillatory band</text>
+<line x1="796.0" y1="216.0" x2="1300.0" y2="216.0" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="220.0" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.61</text>
+<line x1="796.0" y1="254.8" x2="1300.0" y2="254.8" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="258.8" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.48</text>
+<line x1="796.0" y1="293.6" x2="1300.0" y2="293.6" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="297.6" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.36</text>
+<line x1="796.0" y1="332.4" x2="1300.0" y2="332.4" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="336.4" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.24</text>
+<line x1="796.0" y1="371.2" x2="1300.0" y2="371.2" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="375.2" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.12</text>
+<line x1="796.0" y1="410.0" x2="1300.0" y2="410.0" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="414.0" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.00</text>
+<line x1="796.0" y1="216.0" x2="796.0" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="796.0" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.003</text>
+<line x1="896.8" y1="216.0" x2="896.8" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="896.8" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.034</text>
+<line x1="997.6" y1="216.0" x2="997.6" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="997.6" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.066</text>
+<line x1="1098.4" y1="216.0" x2="1098.4" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="1098.4" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.097</text>
+<line x1="1199.2" y1="216.0" x2="1199.2" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="1199.2" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.129</text>
+<line x1="1300.0" y1="216.0" x2="1300.0" y2="410.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="1300.0" y="434.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.160</text>
+<line x1="796.0" y1="216.0" x2="796.0" y2="410.0" stroke="#89a2bc" stroke-width="2.0"/>
+<line x1="796.0" y1="410.0" x2="1300.0" y2="410.0" stroke="#89a2bc" stroke-width="2.0"/>
+<polyline fill="none" stroke="#f97316" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" points="796.0,374.0 802.4,371.8 812.1,368.3 824.9,363.5 850.6,354.1 914.8,330.0 1043.2,290.3 1300.0,236.8"/>
+<polyline fill="none" stroke="#38bdf8" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" points="796.0,387.8 802.4,383.3 812.1,376.8 824.9,369.1 850.6,356.0 914.8,330.0 1043.2,290.2 1300.0,236.8"/>
+<circle cx="796.0" cy="374.0" r="4.0" fill="#f97316"/>
+<circle cx="802.4" cy="371.8" r="4.0" fill="#f97316"/>
+<circle cx="812.1" cy="368.3" r="4.0" fill="#f97316"/>
+<circle cx="824.9" cy="363.5" r="4.0" fill="#f97316"/>
+<circle cx="850.6" cy="354.1" r="4.0" fill="#f97316"/>
+<circle cx="914.8" cy="330.0" r="4.0" fill="#f97316"/>
+<circle cx="1043.2" cy="290.3" r="4.0" fill="#f97316"/>
+<circle cx="1300.0" cy="236.8" r="4.0" fill="#f97316"/>
+<circle cx="796.0" cy="387.8" r="4.0" fill="#38bdf8"/>
+<circle cx="802.4" cy="383.3" r="4.0" fill="#38bdf8"/>
+<circle cx="812.1" cy="376.8" r="4.0" fill="#38bdf8"/>
+<circle cx="824.9" cy="369.1" r="4.0" fill="#38bdf8"/>
+<circle cx="850.6" cy="356.0" r="4.0" fill="#38bdf8"/>
+<circle cx="914.8" cy="330.0" r="4.0" fill="#38bdf8"/>
+<circle cx="1043.2" cy="290.2" r="4.0" fill="#38bdf8"/>
+<circle cx="1300.0" cy="236.8" r="4.0" fill="#38bdf8"/>
+<text x="1048.0" y="458.0" fill="#dce7f3" font-size="14" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">Δb above the lower Hopf edge</text>
+<text x="752.0" y="448.0" fill="#c8d6e5" font-size="12" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">At Δb=0.003, the short horizon adds 0.04 of extra x-amplitude; by Δb=0.16, the gap is -0.00.</text>
+<rect x="70.0" y="536.0" width="592.0" height="320.0" rx="20" fill="#122131" stroke="#58708c" stroke-width="1.8"/>
+<text x="88.0" y="566.0" fill="#dce7f3" font-size="20" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="700">Brusselator period is already stable</text>
+<text x="88.0" y="590.0" fill="#9fb3c8" font-size="13" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">The two period curves almost overlap while amplitude is still settling</text>
+<line x1="134.0" y1="608.0" x2="638.0" y2="608.0" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="612.0" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">7.19</text>
+<line x1="134.0" y1="646.8" x2="638.0" y2="646.8" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="650.8" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">5.75</text>
+<line x1="134.0" y1="685.6" x2="638.0" y2="685.6" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="689.6" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">4.31</text>
+<line x1="134.0" y1="724.4" x2="638.0" y2="724.4" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="728.4" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">2.87</text>
+<line x1="134.0" y1="763.2" x2="638.0" y2="763.2" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="767.2" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">1.44</text>
+<line x1="134.0" y1="802.0" x2="638.0" y2="802.0" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="124.0" y="806.0" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.00</text>
+<line x1="134.0" y1="608.0" x2="134.0" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="134.0" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.01</text>
+<line x1="234.8" y1="608.0" x2="234.8" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="234.8" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.06</text>
+<line x1="335.6" y1="608.0" x2="335.6" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="335.6" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.12</text>
+<line x1="436.4" y1="608.0" x2="436.4" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="436.4" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.17</text>
+<line x1="537.2" y1="608.0" x2="537.2" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="537.2" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.23</text>
+<line x1="638.0" y1="608.0" x2="638.0" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="638.0" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.28</text>
+<line x1="134.0" y1="608.0" x2="134.0" y2="802.0" stroke="#89a2bc" stroke-width="2.0"/>
+<line x1="134.0" y1="802.0" x2="638.0" y2="802.0" stroke="#89a2bc" stroke-width="2.0"/>
+<polyline fill="none" stroke="#f97316" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" points="134.0,631.9 152.7,631.9 171.3,631.9 208.7,631.6 264.7,631.5 339.3,631.1 451.3,630.3 638.0,628.8"/>
+<polyline fill="none" stroke="#38bdf8" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" points="134.0,632.2 152.7,632.2 171.3,632.1 208.7,631.9 264.7,631.5 339.3,631.1 451.3,630.3 638.0,628.8"/>
+<circle cx="134.0" cy="631.9" r="4.0" fill="#f97316"/>
+<circle cx="152.7" cy="631.9" r="4.0" fill="#f97316"/>
+<circle cx="171.3" cy="631.9" r="4.0" fill="#f97316"/>
+<circle cx="208.7" cy="631.6" r="4.0" fill="#f97316"/>
+<circle cx="264.7" cy="631.5" r="4.0" fill="#f97316"/>
+<circle cx="339.3" cy="631.1" r="4.0" fill="#f97316"/>
+<circle cx="451.3" cy="630.3" r="4.0" fill="#f97316"/>
+<circle cx="638.0" cy="628.8" r="4.0" fill="#f97316"/>
+<circle cx="134.0" cy="632.2" r="4.0" fill="#38bdf8"/>
+<circle cx="152.7" cy="632.2" r="4.0" fill="#38bdf8"/>
+<circle cx="171.3" cy="632.1" r="4.0" fill="#38bdf8"/>
+<circle cx="208.7" cy="631.9" r="4.0" fill="#38bdf8"/>
+<circle cx="264.7" cy="631.5" r="4.0" fill="#38bdf8"/>
+<circle cx="339.3" cy="631.1" r="4.0" fill="#38bdf8"/>
+<circle cx="451.3" cy="630.3" r="4.0" fill="#38bdf8"/>
+<circle cx="638.0" cy="628.8" r="4.0" fill="#38bdf8"/>
+<text x="386.0" y="850.0" fill="#dce7f3" font-size="14" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">ΔB above the Hopf curve</text>
+<text x="90.0" y="840.0" fill="#c8d6e5" font-size="12" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">Maximum period gap across both models in this card: 0.060 time units.</text>
+<rect x="732.0" y="536.0" width="592.0" height="320.0" rx="20" fill="#122131" stroke="#58708c" stroke-width="1.8"/>
+<text x="750.0" y="566.0" fill="#dce7f3" font-size="20" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="700">Selkov period settles before amplitude does</text>
+<text x="750.0" y="590.0" fill="#9fb3c8" font-size="13" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">Near threshold, period shifts a little while amplitude shifts much more</text>
+<line x1="796.0" y1="608.0" x2="1300.0" y2="608.0" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="612.0" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">15.77</text>
+<line x1="796.0" y1="646.8" x2="1300.0" y2="646.8" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="650.8" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">12.62</text>
+<line x1="796.0" y1="685.6" x2="1300.0" y2="685.6" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="689.6" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">9.46</text>
+<line x1="796.0" y1="724.4" x2="1300.0" y2="724.4" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="728.4" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">6.31</text>
+<line x1="796.0" y1="763.2" x2="1300.0" y2="763.2" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="767.2" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">3.15</text>
+<line x1="796.0" y1="802.0" x2="1300.0" y2="802.0" stroke="#24384b" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="786.0" y="806.0" fill="#9fb3c8" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.00</text>
+<line x1="796.0" y1="608.0" x2="796.0" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="796.0" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.003</text>
+<line x1="896.8" y1="608.0" x2="896.8" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="896.8" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.034</text>
+<line x1="997.6" y1="608.0" x2="997.6" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="997.6" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.066</text>
+<line x1="1098.4" y1="608.0" x2="1098.4" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="1098.4" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.097</text>
+<line x1="1199.2" y1="608.0" x2="1199.2" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="1199.2" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.129</text>
+<line x1="1300.0" y1="608.0" x2="1300.0" y2="802.0" stroke="#1e3144" stroke-width="1.0" stroke-dasharray="4 6"/>
+<text x="1300.0" y="826.0" fill="#9fb3c8" font-size="12" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">0.160</text>
+<line x1="796.0" y1="608.0" x2="796.0" y2="802.0" stroke="#89a2bc" stroke-width="2.0"/>
+<line x1="796.0" y1="802.0" x2="1300.0" y2="802.0" stroke="#89a2bc" stroke-width="2.0"/>
+<polyline fill="none" stroke="#f97316" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" points="796.0,628.8 802.4,629.3 812.1,629.9 824.9,630.9 850.6,632.6 914.8,637.6 1043.2,648.5 1300.0,667.5"/>
+<polyline fill="none" stroke="#38bdf8" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" points="796.0,629.5 802.4,629.9 812.1,630.4 824.9,631.1 850.6,632.7 914.8,637.6 1043.2,648.5 1300.0,667.5"/>
+<circle cx="796.0" cy="628.8" r="4.0" fill="#f97316"/>
+<circle cx="802.4" cy="629.3" r="4.0" fill="#f97316"/>
+<circle cx="812.1" cy="629.9" r="4.0" fill="#f97316"/>
+<circle cx="824.9" cy="630.9" r="4.0" fill="#f97316"/>
+<circle cx="850.6" cy="632.6" r="4.0" fill="#f97316"/>
+<circle cx="914.8" cy="637.6" r="4.0" fill="#f97316"/>
+<circle cx="1043.2" cy="648.5" r="4.0" fill="#f97316"/>
+<circle cx="1300.0" cy="667.5" r="4.0" fill="#f97316"/>
+<circle cx="796.0" cy="629.5" r="4.0" fill="#38bdf8"/>
+<circle cx="802.4" cy="629.9" r="4.0" fill="#38bdf8"/>
+<circle cx="812.1" cy="630.4" r="4.0" fill="#38bdf8"/>
+<circle cx="824.9" cy="631.1" r="4.0" fill="#38bdf8"/>
+<circle cx="850.6" cy="632.7" r="4.0" fill="#38bdf8"/>
+<circle cx="914.8" cy="637.6" r="4.0" fill="#38bdf8"/>
+<circle cx="1043.2" cy="648.5" r="4.0" fill="#38bdf8"/>
+<circle cx="1300.0" cy="667.5" r="4.0" fill="#38bdf8"/>
+<text x="1048.0" y="850.0" fill="#dce7f3" font-size="14" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="normal">Δb above the lower Hopf edge</text>
+<text x="752.0" y="840.0" fill="#c8d6e5" font-size="12" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">A single fixed scan can locate onset before it can trust the newborn cycle size.</text>
+<rect x="70.0" y="948.0" width="1254.0" height="146.0" rx="18" fill="#0d1722" stroke="#58708c" stroke-width="1.2"/>
+<text x="88.0" y="976.0" fill="#dce7f3" font-size="18" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="700">Read the card like this</text>
+<text x="88.0" y="1002.0" fill="#c8d6e5" font-size="14" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">• Brusselator: at ΔB=0.01, x-amplitude falls from 0.24 on the short horizon to 0.13 on the long one, while period only shifts from 6.30 to 6.29.</text>
+<text x="88.0" y="1026.0" fill="#c8d6e5" font-size="14" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">• Selkov: at Δb=0.003, x-amplitude falls from 0.11 to 0.07, with period moving only from 14.08 to 14.02.</text>
+<text x="88.0" y="1050.0" fill="#c8d6e5" font-size="14" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="normal">• The threshold tells you where oscillation begins. The finite cycle size near that threshold still needs enough settling time.</text>
+</svg>
