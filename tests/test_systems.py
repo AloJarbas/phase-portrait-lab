@@ -7,6 +7,7 @@ from phaseportraitlab.analysis import analyze_fixed_points, fixed_point_residual
 from phaseportraitlab.brusselator_atlas import build_brusselator_parameter_atlas, estimate_brusselator_cycle_metrics
 from phaseportraitlab.brusselator_sweep import brusselator_hopf_threshold, render_brusselator_hopf_report, sweep_brusselator_b_values
 from phaseportraitlab.chemistry_local_global import render_chemistry_local_global_report
+from phaseportraitlab.nonlinear_saddle import build_pendulum_separatrix_rows, pendulum_energy
 from phaseportraitlab.chemistry_comparison import render_chemical_oscillator_comparison_report
 from phaseportraitlab.chemistry_horizon_compare import (
     build_brusselator_horizon_rows,
@@ -41,6 +42,7 @@ class PhasePortraitTests(unittest.TestCase):
     def test_lookup_by_slug(self) -> None:
         self.assertEqual(get_system("brusselator").title, "Brusselator")
         self.assertEqual(get_system("selkov").title, "Selkov glycolysis oscillator")
+        self.assertEqual(get_system("simple-pendulum").title, "Simple pendulum")
 
     def test_linear_saddle_is_classified_as_saddle(self) -> None:
         analysis = analyze_fixed_points(get_system("linear-saddle"))
@@ -49,6 +51,24 @@ class PhasePortraitTests(unittest.TestCase):
         eigs = sorted((eig.real for eig in analysis[0].eigenvalues))
         self.assertAlmostEqual(eigs[0], -1.0, places=4)
         self.assertAlmostEqual(eigs[1], 1.0, places=4)
+
+    def test_simple_pendulum_has_center_and_two_saddles(self) -> None:
+        analysis = analyze_fixed_points(get_system("simple-pendulum"))
+        self.assertEqual([item.classification for item in analysis], ["saddle", "center-like", "saddle"])
+        middle_eigs = analysis[1].eigenvalues
+        self.assertAlmostEqual(middle_eigs[0].real, 0.0, places=4)
+        self.assertAlmostEqual(abs(middle_eigs[0].imag), 1.0, places=4)
+
+    def test_pendulum_separatrix_rows_stay_on_energy_two(self) -> None:
+        rows = build_pendulum_separatrix_rows(samples=21)
+        for row in rows:
+            theta = math.pi + row.shift
+            self.assertAlmostEqual(pendulum_energy(theta, row.exact_omega), 2.0, places=6)
+
+    def test_pendulum_linearization_is_only_local(self) -> None:
+        rows = build_pendulum_separatrix_rows(samples=51)
+        self.assertLess(rows[3].abs_error, 0.001)
+        self.assertGreater(rows[-1].abs_error, 1.1)
 
     def test_lotka_volterra_coexistence_point_is_center_like(self) -> None:
         analysis = analyze_fixed_points(get_system("lotka-volterra"))

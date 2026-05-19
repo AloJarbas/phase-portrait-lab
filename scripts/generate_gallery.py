@@ -25,6 +25,7 @@ from phaseportraitlab.chemistry_horizon_compare import (
     write_chemistry_horizon_compare_report,
 )
 from phaseportraitlab.gallery import build_gallery
+from phaseportraitlab.nonlinear_saddle import write_pendulum_nonlinear_saddle_packet
 from phaseportraitlab.selkov_atlas import (
     default_selkov_parameter_atlas,
     render_selkov_parameter_atlas,
@@ -109,6 +110,10 @@ def main() -> None:
                 ]
             )
     paths.append(horizon_svg_path)
+
+    pendulum_paths = write_pendulum_nonlinear_saddle_packet(repo=REPO)
+    for path in pendulum_paths:
+        print(f"WROTE {path}")
 
     for path in paths:
         print(f"WROTE {path}")

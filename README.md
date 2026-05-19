@@ -4,9 +4,10 @@ A tiny public lab for planar dynamical systems.
 
 The point is simple: generate phase portraits that are worth looking at, not just mention the system names and move on.
 
-This repo now opens with five small case studies:
+This repo now opens with six small case studies:
 
 - **Linear saddle** for the cleanest stable-manifold versus unstable-manifold picture
+- **Simple pendulum** for a nonlinear saddle whose exact separatrix bends away from the linear tangent picture
 - **Van der Pol** for self-excited oscillation
 - **Lotka-Volterra** for predator-prey cycling
 - **Brusselator** for a compact reaction-kinetics oscillator
@@ -33,6 +34,7 @@ The chemistry passes now make that local story slower and more explicit:
 - a generated comparison report that puts the Brusselator's one-sided oscillatory region next to the Selkov model's stable → oscillatory → stable window
 - a generated local-versus-global chemistry note that makes the boundary of Jacobian theory explicit instead of treating Hopf language as the whole story
 - a generated horizon-convergence sidecar that shows one more finite-time wrinkle: near threshold, short runs can overstate newborn cycle amplitude long before they noticeably move the period
+- a pendulum sidecar that makes one local-versus-global lesson explicit: the upright equilibrium is still a saddle, but the exact separatrix is an energy contour rather than a pair of straight global eigenlines
 - companion notebooks on the gallery tour, the local-linearization pass, and the broader `A`-`B` parameter map
 - generated reports with sampled tables, formulas, and caveats about what is exact versus what is numerically estimated
 
@@ -47,6 +49,7 @@ That makes the chemistry lane more useful than a bare vector field and lighter t
 - a new chemistry notebook on where exact local theory stops and finite-time orbit measurement begins
 - two chemistry atlases plus a comparison report instead of a one-model story
 - a new convergence sidecar that shows why near-threshold chemistry measurements need more than one fixed horizon
+- a nonlinear saddle sidecar that gives the repo one exact geometry card outside the chemistry lane
 - tests that check the fixed points, the RK4 stepper, and the chemistry measurement layers
 
 ## Gallery
@@ -54,6 +57,10 @@ That makes the chemistry lane more useful than a bare vector field and lighter t
 ### Linear saddle
 
 ![Linear saddle phase portrait](assets/linear-saddle-phase-portrait.svg)
+
+### Simple pendulum
+
+![Simple pendulum phase portrait](assets/simple-pendulum-phase-portrait.svg)
 
 ### Van der Pol oscillator
 
@@ -89,19 +96,25 @@ That makes the chemistry lane more useful than a bare vector field and lighter t
 
 This new sidecar tightens the chemistry story. The Hopf edge is still exact, but the first visible cycle size near that edge is not. Short settle windows make the newborn cycle look larger than the longer run supports, while the period barely moves.
 
+### Pendulum saddle sidecar
+
+![Pendulum saddle sidecar](assets/pendulum-nonlinear-saddle.png)
+
+This new sidecar closes one geometry gap in the repo. The upright pendulum is still a saddle, but the barrier that separates trapped motion from rotation is an exact energy contour, not a straight-line global manifold.
+
 ## Quick start
 
 ```bash
 python3 scripts/generate_gallery.py
 python3 -m unittest discover -s tests
-python3 -m phaseportraitlab.cli linear-saddle lotka-volterra
+python3 -m phaseportraitlab.cli linear-saddle simple-pendulum lotka-volterra
 ```
 
-The gallery build also refreshes `reports/brusselator-hopf-sweep.md`, `reports/brusselator-parameter-atlas.md`, `reports/selkov-parameter-atlas.md`, `reports/chemical-oscillator-comparison.md`, `reports/chemistry-local-to-global.md`, and `reports/chemistry-horizon-convergence.md`.
+The gallery build also refreshes `reports/brusselator-hopf-sweep.md`, `reports/brusselator-parameter-atlas.md`, `reports/selkov-parameter-atlas.md`, `reports/chemical-oscillator-comparison.md`, `reports/chemistry-local-to-global.md`, `reports/chemistry-horizon-convergence.md`, and `reports/pendulum-nonlinear-saddle.md`.
 
 ## Notebook
 
-See `notebooks/phase_portrait_tour.ipynb` for the gallery walkthrough, `notebooks/local_linearization_and_hopf.ipynb` for the slower pass on Jacobians, trace, and the Brusselator Hopf threshold, `notebooks/brusselator_parameter_atlas.ipynb` for the first chemistry-facing `A`-`B` parameter study, `notebooks/chemistry_local_to_global.ipynb` for the bridge between exact local theory and finite-time cycle measurements across the two chemistry models, and `notebooks/chemistry_horizon_convergence.ipynb` for the new horizon-sensitivity sidecar.
+See `notebooks/phase_portrait_tour.ipynb` for the gallery walkthrough, `notebooks/local_linearization_and_hopf.ipynb` for the slower pass on Jacobians, trace, and the Brusselator Hopf threshold, `notebooks/brusselator_parameter_atlas.ipynb` for the first chemistry-facing `A`-`B` parameter study, `notebooks/chemistry_local_to_global.ipynb` for the bridge between exact local theory and finite-time cycle measurements across the two chemistry models, `notebooks/chemistry_horizon_convergence.ipynb` for the horizon-sensitivity sidecar, and `notebooks/pendulum_nonlinear_saddle.ipynb` for the new nonlinear-saddle packet.
 
 ## Repo layout
 
@@ -110,6 +123,7 @@ See `notebooks/phase_portrait_tour.ipynb` for the gallery walkthrough, `notebook
 - `phaseportraitlab/analysis.py` builds vector fields, trajectories, and Jacobian-based fixed-point analysis
 - `phaseportraitlab/brusselator_sweep.py` scans the Brusselator across `B`, renders the Hopf card, and writes the sweep report
 - `phaseportraitlab/brusselator_atlas.py` builds the two-parameter Brusselator atlas and estimates post-threshold amplitude/period on the oscillatory side
+- `phaseportraitlab/nonlinear_saddle.py` builds the pendulum separatrix sidecar, sampled branch table, report, and notebook
 - `phaseportraitlab/selkov_atlas.py` builds a second chemistry atlas where the oscillatory regime is a finite band instead of a one-sided half-plane
 - `phaseportraitlab/chemistry_comparison.py` writes the side-by-side comparison note for the two chemistry models
 - `phaseportraitlab/chemistry_local_global.py` writes the local-versus-global chemistry note so the repo is explicit about what the Jacobian does and does not tell you
@@ -118,13 +132,13 @@ See `notebooks/phase_portrait_tour.ipynb` for the gallery walkthrough, `notebook
 - `phaseportraitlab/svg.py` renders the portraits
 - `phaseportraitlab/gallery.py` writes the asset set
 - `scripts/generate_gallery.py` rebuilds the gallery
-- `reports/brusselator-hopf-sweep.md`, `reports/brusselator-parameter-atlas.md`, `reports/selkov-parameter-atlas.md`, `reports/chemical-oscillator-comparison.md`, `reports/chemistry-local-to-global.md`, and `reports/chemistry-horizon-convergence.md` are the generated science notes
+- `reports/brusselator-hopf-sweep.md`, `reports/brusselator-parameter-atlas.md`, `reports/selkov-parameter-atlas.md`, `reports/chemical-oscillator-comparison.md`, `reports/chemistry-local-to-global.md`, `reports/chemistry-horizon-convergence.md`, and `reports/pendulum-nonlinear-saddle.md` are the generated science notes
 - `tests/test_systems.py` runs the verification pass
-- `notebooks/phase_portrait_tour.ipynb`, `notebooks/local_linearization_and_hopf.ipynb`, `notebooks/brusselator_parameter_atlas.ipynb`, `notebooks/chemistry_local_to_global.ipynb`, and `notebooks/chemistry_horizon_convergence.ipynb` are the companion science notebooks
+- `notebooks/phase_portrait_tour.ipynb`, `notebooks/local_linearization_and_hopf.ipynb`, `notebooks/brusselator_parameter_atlas.ipynb`, `notebooks/chemistry_local_to_global.ipynb`, `notebooks/chemistry_horizon_convergence.ipynb`, and `notebooks/pendulum_nonlinear_saddle.ipynb` are the companion science notebooks
 
 ## Next useful moves
 
 - add one report mode that compares fixed-point types across several systems at once
-- add one nonlinear saddle-style example where the manifolds curve instead of staying perfectly straight
+- add one second nonlinear saddle only if it reveals a genuinely different global-manifold geometry instead of repeating the pendulum energy story
 - add one third chemically grounded oscillator only if it reveals a genuinely new geometry instead of rephrasing the same Hopf story
 - push the chemistry horizon sidecar onto one second anchor line only if it reveals a genuinely different convergence story instead of repeating the same near-threshold caution

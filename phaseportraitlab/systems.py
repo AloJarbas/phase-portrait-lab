@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import math
 from typing import Callable
 
 State = tuple[float, float]
@@ -189,7 +190,36 @@ def linear_saddle() -> PlanarSystem:
     )
 
 
-CATALOG: tuple[PlanarSystem, ...] = (linear_saddle(), vandepol(), lotka_volterra(), brusselator(), selkov())
+def simple_pendulum() -> PlanarSystem:
+    def derivatives(theta: float, omega: float) -> State:
+        return (omega, -math.sin(theta))
+
+    def dx_nullclines(x_range: tuple[float, float]) -> list[list[State]]:
+        x0, x1 = x_range
+        return [[(x0, 0.0), (x1, 0.0)]]
+
+    def dy_nullclines(x_range: tuple[float, float]) -> list[list[State]]:
+        lines: list[list[State]] = []
+        for theta in (-math.pi, 0.0, math.pi):
+            if x_range[0] <= theta <= x_range[1]:
+                lines.append([(theta, -2.6), (theta, 2.6)])
+        return lines
+
+    return PlanarSystem(
+        slug="simple-pendulum",
+        title="Simple pendulum",
+        description="The hanging equilibrium is center-like, but the upright equilibrium is a nonlinear saddle whose separatrix bends into an energy contour instead of staying on straight eigendirections.",
+        x_range=(-3.4, 3.4),
+        y_range=(-2.6, 2.6),
+        derivatives=derivatives,
+        fixed_points=((-math.pi, 0.0), (0.0, 0.0), (math.pi, 0.0)),
+        trajectories=((0.0, 1.2), (0.0, 1.85), (0.0, 2.1), (2.75, 0.18), (-2.75, -0.18), (1.4, 0.0)),
+        nullclines_dx=dx_nullclines,
+        nullclines_dy=dy_nullclines,
+    )
+
+
+CATALOG: tuple[PlanarSystem, ...] = (linear_saddle(), simple_pendulum(), vandepol(), lotka_volterra(), brusselator(), selkov())
 
 
 def get_system(slug: str) -> PlanarSystem:
